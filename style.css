@@ -1,0 +1,143 @@
+
+body{
+    background-color: black;
+}
+nav{
+    background-color: lightgray;
+    width: 100%;
+    border-radius: 50px;
+}
+.menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.menu .lista{
+    display: inline-block;
+}
+.lista-r{
+    float: right;
+}
+.lista a{
+    text-decoration: none;
+    color: black;
+    padding: 15px 50px;
+    display: block;
+}
+.lista a:hover{
+    background-color: aquamarine;
+    border-radius: 50px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.container-flex{
+    display: flex;
+    width: 90vh;
+}
+.panel{
+    height: 80vh;
+    background-size: auto  100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transform: flex 0.7 ease-in;
+    border: 2px solid white;
+    animation: moverArriba 1s ease-in;
+}
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(37, 36, 36);
+    padding: 5px;
+}
+.panel.active {
+    flex: 5px;
+    border: 2px solid white;
+}
+.panel.active  h3{
+    opacity: 1;
+    transform: flex 0.3s ease-in 0.4s;
+}
+.container-tabla{
+    margin: 150px auto;
+    width: 80%vh;
+}
+table{
+    background: white;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    animation: moverDerecha 6s ease-in;
+}
+td, th{
+    padding: 20px;
+}
+thead{
+    background-color: #7fffd4;
+    border-bottom:5px solid #35e0a7 ;
+    color: black;
+    font-size: 22px;
+}
+tr:nth-child(even){
+    background-color: rgb(255, 255, 255);
+}
+tr:hover td{
+    background-color: rgba(128, 0, 128, 0.4);
+    color: rgb(255, 255, 255);
+}
+@keyframes moverArriba {
+    0%{
+        opacity: 2;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+    
+}
+@keyframes moverDerecha {
+    0%{
+        opacity: 2;
+        transform: translatex(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+    
+}
+@media screen and (max-width:480px){
+    .container{
+        width: 100vh;
+    }
+    .panel:nth-of-type(4)
+    .panel:nth-of-type(5){
+        display: none;
+    }
+    .panel h3{
+        font-size: 18px;
+    }
+    .panel{
+        flex: 0.3;
+    }
+}
